@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+  <head>
+    <%=javascript_include_tag "iui", "prototype" %>
+    
+    <%=stylesheet_link_tag "iui" %>
+     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum- 
+    scale=1.0; user-scalable=0;"/> 
+    
+	<title>X10</title>
+  </head>
+  <body>
+      
+    <div class="toolbar">
+        <h1 id="PageTitle"></h1>
+        <a id="backButton" href="#" class="button"></a>
+        
+    </div>
+    <%=yield %>
+  </body>
+</html>

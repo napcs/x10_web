@@ -1,0 +1,13 @@
+
+<div id="newform">
+  <% remote_form_for @unit, :url=> formatted_units_path("js") do |f| %>
+      <%=render :partial => "form", :locals => {:f => f} %>
+    <%=submit_tag "Save" %>
+  <% end %>
+
+</div>
+<p><%=link_to "Create new", new_unit_path %></p>
+
+<table id="units" selected="true">
+  <%=render :partial => "unit", :collection => @units %>
+</table>

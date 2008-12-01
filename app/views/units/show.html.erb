@@ -1,0 +1,6 @@
+<div class="panel" id="unit_<%=@unit.id %>">
+  <p><%=@unit.name %> (<%=link_to "edit", edit_unit_path(@unit) %>) (<%=link_to "delete", unit_path(@unit), :method => :delete %>)</p>
+  <%=link_to "On", unit_status_path(@unit, :value=>"on"), :method => :put %> |
+  <%=link_to "Off", unit_status_path(@unit, :value=>"off"), :method => :put %> |
+  <p><%=link_to "Back", :back %></p>
+</div>

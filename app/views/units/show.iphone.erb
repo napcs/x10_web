@@ -1,0 +1,15 @@
+<div id="unit_<%=@unit.id %>" class="panel">
+  <h2><%=h(@unit.name)%> - <%=h(@unit.code)%></h2>
+
+  <%=button_to_remote "On", :url => formatted_unit_status_path(@unit, "iphone", :value=> "on"), :method => :put %>
+  <%=button_to_remote "Off", :url => formatted_unit_status_path(@unit, "iphone", :value=> "off"), :method => :put %>
+
+  <a href="#edit" class="button blueButton">Edit</a>
+</div>
+
+<div id="edit" class="panel">
+    <% remote_form_for @unit, {:url=> formatted_unit_path(@unit, "iphone"), :method => :put} do |f| %>
+      <%=render :partial => "form", :locals => {:f => f} %>
+      <%=submit_tag "Save" %>
+    <% end %>
+</div>

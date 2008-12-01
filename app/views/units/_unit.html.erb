@@ -1,0 +1,6 @@
+<tr id="unit_<%=unit.id %>">
+  <td><%=link_to h(unit.name), unit %></td>
+  <td><%=unit.code %></td>
+  <td><%=link_to "edit", edit_unit_path(unit) %></td>
+  <td><%=link_to_remote "delete", :url => formatted_unit_path(unit, "js"), :method => :delete %></td>
+</tr>

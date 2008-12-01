@@ -1,0 +1,7 @@
+<ul id="units" selected ="true">
+  <% @units.each do |@unit| %>
+    <li><%=link_to @unit.name, unit_path(@unit) %></li>
+
+  <% end %>
+</ul>
+
