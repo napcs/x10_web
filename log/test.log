@@ -1504,3 +1504,83 @@ Rendered units/_unit (0.6ms)
 Rendered units/_unit (0.7ms)
 Rendered units/_unit (0.6ms)
 Completed in 26ms (View: 26, DB: 0) | 200 OK [http://test.host/units]
+  [4;36;1mUnit Create (0.4ms)[0m   [0;1mINSERT INTO "units" ("name", "updated_at", "code", "created_at") VALUES('unit', '2009-07-09 19:41:33', 'a1', '2009-07-09 19:41:33')[0m
+
+
+Processing StatusController#update (for 0.0.0.0 at 2009-07-09 14:41:36) [PUT]
+  Parameters: {"unit_id"=>"1", "action"=>"update", "controller"=>"status", "value"=>"on"}
+Redirected to http://test.host/units/1
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/units/1/status?value=on]
+
+
+Processing StatusController#update (for 0.0.0.0 at 2009-07-09 14:41:36) [PUT]
+  Parameters: {"unit_id"=>"1", "action"=>"update", "controller"=>"status", "value"=>"off"}
+Redirected to http://test.host/units/1
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/units/1/status?value=off]
+
+
+Processing StatusController#update (for 0.0.0.0 at 2009-07-09 14:41:36) [PUT]
+  Parameters: {"unit_id"=>"1", "action"=>"update", "controller"=>"status", "value"=>"off"}
+Redirected to http://test.host/units/1
+Completed in 9ms (DB: 0) | 302 Found [http://test.host/units/1/status?value=off]
+
+
+Processing UnitsController#new (for 0.0.0.0 at 2009-07-09 14:41:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"units"}
+Rendering template within layouts/application
+Rendering units/new
+Rendered units/_form (1.4ms)
+Completed in 23ms (View: 20, DB: 0) | 200 OK [http://test.host/units/new]
+
+
+Processing UnitsController#index (for 0.0.0.0 at 2009-07-09 14:41:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"units"}
+Rendering template within layouts/application
+Rendering units/index
+Rendered units/_form (0.8ms)
+Rendered units/_unit (1.9ms)
+Rendered units/_unit (1.0ms)
+Rendered units/_unit (0.9ms)
+Rendered units/_unit (2.6ms)
+Rendered units/_unit (1.0ms)
+Completed in 27ms (View: 27, DB: 0) | 200 OK [http://test.host/units]
+  [4;36;1mUnit Create (0.4ms)[0m   [0;1mINSERT INTO "units" ("name", "updated_at", "code", "created_at") VALUES('unit', '2009-07-09 19:43:47', 'a1', '2009-07-09 19:43:47')[0m
+
+
+Processing StatusController#update (for 0.0.0.0 at 2009-07-09 14:43:50) [PUT]
+  Parameters: {"unit_id"=>"1", "action"=>"update", "controller"=>"status", "value"=>"on"}
+Redirected to http://test.host/units/1
+Completed in 3ms (DB: 1) | 302 Found [http://test.host/units/1/status?value=on]
+
+
+Processing StatusController#update (for 0.0.0.0 at 2009-07-09 14:43:50) [PUT]
+  Parameters: {"unit_id"=>"1", "action"=>"update", "controller"=>"status", "value"=>"off"}
+Redirected to http://test.host/units/1
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/units/1/status?value=off]
+
+
+Processing StatusController#update (for 0.0.0.0 at 2009-07-09 14:43:50) [PUT]
+  Parameters: {"unit_id"=>"1", "action"=>"update", "controller"=>"status", "value"=>"off"}
+Redirected to http://test.host/units/1
+Completed in 7ms (DB: 0) | 302 Found [http://test.host/units/1/status?value=off]
+
+
+Processing UnitsController#new (for 0.0.0.0 at 2009-07-09 14:43:50) [GET]
+  Parameters: {"action"=>"new", "controller"=>"units"}
+Rendering template within layouts/application
+Rendering units/new
+Rendered units/_form (2.1ms)
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://test.host/units/new]
+
+
+Processing UnitsController#index (for 0.0.0.0 at 2009-07-09 14:43:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"units"}
+Rendering template within layouts/application
+Rendering units/index
+Rendered units/_form (0.6ms)
+Rendered units/_unit (1.5ms)
+Rendered units/_unit (0.7ms)
+Rendered units/_unit (0.7ms)
+Rendered units/_unit (0.7ms)
+Rendered units/_unit (0.7ms)
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://test.host/units]
