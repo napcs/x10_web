@@ -1,6 +1,6 @@
 == X10 Controller system
 
-This simple Rails app provides a mobile interface and a RESTful system for accessing X10 equipment using the ActiveHome SDK via the web.
+This simple Rails app provides a mobile interface for accessing X10 equipment using the ActiveHome SDK via the web. Future versions will support JSON apis. But this works for me for now.
 
 == Features
 
