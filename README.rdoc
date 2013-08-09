@@ -1,0 +1,50 @@
+== X10 Controller system
+
+This simple Rails app provides a mobile interface and a RESTful system for accessing X10 equipment using the ActiveHome SDK via the web.
+
+== Features
+
+ * Mobile support
+ * Exteremly simple
+ * Tested
+ * Supported with JRuby as a Windows service
+ 
+== Requirements
+
+ * ActiveHome SDK and ahome.exe
+ * Windows
+ * JRuby with Bundler installed (for now)
+ 
+== Installation
+
+ Extract and edit app/models/unit.rb and set the path to ActiveHome. We'll fix this later.
+ 
+ Ensure your equipment is connected and start the server.
+
+Create the file  config/config.yml and add in a username and password
+
+    username: homer
+    password: 1234
+    
+Then 
+
+    jruby -S bundle
+    
+Then run it with trinidad
+    
+    jruby -S trinidad -e production -p 11000
+    
+Or install as a Unix or Windows service
+
+    jruby -S trinidad_init_service
+    
+    
+ 
+== What it doesn't do
+
+Lots. No dimming, no cameras, none of that. Dimming would be easy to add but I don't care. 
+
+== License
+
+MIT, same as Ruby and Ruby on Rails.
+

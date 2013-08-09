@@ -1,0 +1,20 @@
+<div data-role="header">
+  <h1>Edit unit</h1>
+  <%= link_to 'Back', @unit, "class" => "ui-btn-right" %>
+  
+</div>
+
+<div data-role="content">
+  <%= form_for @unit do |f| %>
+   <p>
+     <%=f.label :name %>
+     <%=f.text_field :name %>
+   </p> 
+   <p>
+     <%=f.label :code %>
+     <%=f.text_field :code %>
+   </p>
+
+    <%=f.submit %>
+  <% end %>
+</div>

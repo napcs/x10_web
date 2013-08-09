@@ -10,76 +10,44 @@ def new
 end
 
 def create
-  @unit = Unit.new(params[:unit])
+  @unit = Unit.new(unit_params)
   if @unit.save
     respond_to do |format|
   	  format.html do
   	    flash[:notice] = "Unit created"
   		  redirect_to units_path
   	  end
-  	  format.js
+  	  
 	  end
 
   else
     respond_to do |format|
-       format.html{render :action => "new"}
-	   format.js do
-	     render :update do |page|
-   	        page.alert("There was an error")
-		 end
-	   end
-       format.xml{render :xml, @unit.errors.to_xml}
-	end	
+      format.html{render :action => "new"}
+    end
   end
 end
 
 def show
   @unit = Unit.find(params[:id])
-  respond_to do |format|
-   format.html
-   format.iphone{render :layout => false }
-  end
 end
 
 def edit
   @unit = Unit.find(params[:id])
-  respond_to do |format|
-   format.html
-   format.iphone{render :layout => false }
-  end
 end
 
 def update
   @unit = Unit.find(params[:id])
-  if @unit.update_attributes(params[:unit])
+  if @unit.update_attributes(unit_params)
     respond_to do |format|
   	  format.html do
-  	  flash[:notice] = "Unit created"
-  		 redirect_to units_path
+  	    flash[:notice] = "Unit created"
+  		  redirect_to @unit
   	  end
-  	  format.js
-      format.iphone do
-        render :update do |page|
-           page << "window.location = '#{units_path}';"
-         end
-      end
-  	  format.xml do
-  	    render :xml => @unit.to_xml
-  	  end
-	
     end
   else
     respond_to do |format|
-       format.html{render :action => "new"}
-       format.iphone{render :action => "show", :layout => false }
-       
-	   format.js do
-	     render :update do |page|
-   	        page.alert("There was an error")
-		 end
-	   end
-       format.xml{render :xml, @unit.errors.to_xml}
-	end	
+      format.html{render :action => "edit"}	
+    end
   end
 end
 
@@ -91,8 +59,12 @@ def destroy
       flash[:notice] = "Removed."
       redirect_to units_path
     end
-    format.js
   end
 end
+
+def unit_params
+  params.require(:unit).permit(:name, :code)
+end
+
 
 end

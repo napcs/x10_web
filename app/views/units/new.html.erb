@@ -1,4 +1,20 @@
-<% form_for @unit do |f| %>
-  <%=render :partial => "form", :locals => {:f => f} %>
-  <%=submit_tag "Save" %>
-<% end %>
+<div data-role="header">
+  <h1>New unit</h1>
+  <%= link_to 'Home', root_url, "class" => "ui-btn-right" %>
+  
+</div>
+
+<div data-role="content">
+  <%= form_for @unit do |f| %>
+   <p>
+     <%=f.label :name %>
+     <%=f.text_field :name %>
+   </p> 
+   <p>
+     <%=f.label :code %>
+     <%=f.text_field :code %>
+   </p>
+
+    <%=f.submit %>
+  <% end %>
+</div>

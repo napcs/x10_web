@@ -1,2 +1,0 @@
-page.insert_html :bottom, "units", render(:partial => "unit", :locals=>{:unit => @unit})
-page.visual_effect :highlight, "unit_#{@unit.id}"

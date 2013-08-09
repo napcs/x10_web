@@ -1,6 +1,15 @@
-<div class="panel" id="unit_<%=@unit.id %>">
-  <p><%=@unit.name %> (<%=link_to "edit", edit_unit_path(@unit) %>) (<%=link_to "delete", unit_path(@unit), :method => :delete %>)</p>
-  <%=link_to "On", unit_status_path(@unit, :value=>"on"), :method => :put %> |
-  <%=link_to "Off", unit_status_path(@unit, :value=>"off"), :method => :put %> |
-  <p><%=link_to "Back", :back %></p>
+
+<div data-role="header">
+  <h1><%= @unit.name %></h1>
+  <%= link_to 'Home', root_url, "class" => "ui-btn-right" %>
 </div>
+
+<div data-role="content">
+  <%=button_to "On", unit_status_path(@unit, :value=>"on"), :method => :put %>
+  <%=button_to "Off", unit_status_path(@unit, :value=>"off"), :method => :put %>
+  <%=button_to "Edit", edit_unit_path(@unit), :method => :get %>
+  
+  <%=button_to "delete", unit_path(@unit), :method => :delete %>
+  
+</div>
+

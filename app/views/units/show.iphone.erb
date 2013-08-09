@@ -1,15 +1,9 @@
-<div id="unit_<%=@unit.id %>" class="panel">
-  <h2><%=h(@unit.name)%> - <%=h(@unit.code)%></h2>
-
-  <%=button_to_remote "On", :url => unit_status_path(@unit, :format => "iphone", :value=> "on"), :method => :put %>
-  <%=button_to_remote "Off", :url => unit_status_path(@unit, :format => "iphone", :value=> "off"), :method => :put %>
-
-  <a href="#edit" class="button blueButton">Edit</a>
+<div data-role="header">
+  <h1><%= @unit.name %></h1>
+  <%= link_to 'Home', root_url, "class" => "ui-btn-right" %>
 </div>
 
-<div id="edit" class="panel">
-    <% remote_form_for @unit, {:url=> unit_path(@unit, :format => "iphone"), :method => :put} do |f| %>
-      <%=render :partial => "form", :locals => {:f => f} %>
-      <%=submit_tag "Save" %>
-    <% end %>
+<div data-role="content">
+  <%=link_to "On", unit_status_path(@unit, :value=>"on"), :method => :put %>
+  <%=link_to "Off", unit_status_path(@unit, :value=>"off"), :method => :put %>
 </div>
