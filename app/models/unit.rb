@@ -1,9 +1,9 @@
 class Unit < ActiveRecord::Base
   # name   :string
   # code   :string
-  
+
   validates_presence_of :name, :code
-  
+
   ::AHCMD_PATH = "c:/ahome/ahcmd.exe"
 
   def on
@@ -15,7 +15,7 @@ class Unit < ActiveRecord::Base
   end
 
   def dim(amount)
-  	cmd(self.code, "dim", amount)
+    cmd(self.code, "dim", amount)
   end
 
   def brighten(amount)
@@ -27,5 +27,4 @@ class Unit < ActiveRecord::Base
       `#{::AHCMD_PATH} sendplc #{code} #{command} #{amount}`
     end
 
-  
 end
