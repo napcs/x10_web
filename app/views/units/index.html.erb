@@ -1,11 +1,12 @@
-<p><%=link_to "Create new", new_unit_path %></p>
 
 <div data-role="header">
   <h1>Units</h1>
+  <%= link_to 'Home', root_url, "class" => "ui-btn-right" %>
 </div>
 
 <div data-role="content">
   <ul data-role="listview">
+    <li><%=link_to "Create new", new_unit_path %></li>
     <% @units.each do |unit| %>
       <li><%=link_to unit.name, unit %></li>
     <% end %>

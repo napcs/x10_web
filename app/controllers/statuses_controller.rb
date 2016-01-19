@@ -7,7 +7,13 @@ class StatusesController < ApplicationController
     end
 
     respond_to do |format|
-      format.html{redirect_to unit_path(@unit)}
+      format.html do
+        if params[:dashboard]
+          redirect_to root_path
+        else
+          redirect_to unit_path(@unit)
+        end
+      end
     end
   end
 

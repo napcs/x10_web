@@ -1,0 +1,15 @@
+<div data-role="header">
+  <h1>X10</h1>
+  <%= link_to 'Units', units_url, "class" => "ui-btn-right" %>
+</div>
+
+<div data-role="content">
+  <% @units.each do |unit| %>
+    <div class="unit ui-grid-b">
+      <div class="ui-block-a"><%= unit.name %></div>
+      <div class="ui-block-b"><%=button_to "On", unit_status_path(unit, :value=>"on", :dashboard => true), :method => :put %></div>
+      <div class="ui-block-c"><%=button_to "Off", unit_status_path(unit, :value=>"off", :dashboard => true), :method => :put %></div>
+
+    </div>
+  <% end %>
+</div>
