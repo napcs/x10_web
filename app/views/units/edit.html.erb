@@ -1,7 +1,7 @@
 <div data-role="header">
   <h1>Edit unit</h1>
   <%= link_to 'Back', @unit, "class" => "ui-btn-right" %>
-  
+
 </div>
 
 <div data-role="content">
@@ -9,10 +9,14 @@
    <p>
      <%=f.label :name %>
      <%=f.text_field :name %>
-   </p> 
+   </p>
    <p>
      <%=f.label :code %>
      <%=f.text_field :code %>
+   </p>
+   <p>
+     <%=f.label :position %>
+     <%=f.text_field :position %>
    </p>
 
     <%=f.submit %>
